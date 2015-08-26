@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.26)  26 AUG 2015 01:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.26)  26 AUG 2015 01:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -147,20 +147,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] (./Homework 0.aux) ) 
 Here is how much of TeX's memory you used:
- 1306 strings out of 495020
- 14579 string characters out of 6181324
+ 1308 strings out of 495020
+ 14600 string characters out of 6181324
  62525 words of memory out of 5000000
- 4569 multiletter control sequences out of 15000+600000
- 4608 words of font info for 17 fonts, out of 8000000 for 9000
+ 4570 multiletter control sequences out of 15000+600000
+ 4954 words of font info for 18 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  30i,10n,43p,229b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb>
-Output written on "Homework 0.pdf" (1 page, 23677 bytes).
+s/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "Homework 0.pdf" (1 page, 46183 bytes).
 PDF statistics:
- 16 PDF objects out of 1000 (max. 8388607)
- 10 compressed objects within 1 object stream
+ 24 PDF objects out of 1000 (max. 8388607)
+ 16 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
