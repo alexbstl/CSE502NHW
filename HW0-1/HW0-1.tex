@@ -65,7 +65,7 @@ pixel-for-pixel identical (especially the pseudocode).
 \item "The \textsc{blort-search} algorithm runs in time $\Theta(n^2)$, while the \textsc{Foo-Search} algorithm runs in time $O(n\log n)$ but is faster in practice for only $n > 10000$.  Do not use \textsc{stupid-search}, which is $\Omega(n^5)$."
 \item
 "It can be shown that for $\epsilon>0$,
-\begin{align*}
+\begin{align*}test
 \lim_{n\to\infty}\frac{n\log (n)}{n^{1+\epsilon}}=0
 \end{align*}
 Moreover,
@@ -74,6 +74,26 @@ a^{log_b n}=n^{log_b a},
 \end{align*}
 which is useful for recurrence analysis."
 \item "One way to code the \textsc{binary-search} algorithm is as follows:
+\begin{algorithmic}
+\Procedure{Bsearch}{$x$, $A$, $p$, $r$}
+ \If $p=r$
+ 	\If $A[p]=x$
+ 		\State \Return {$p$}
+ 	\Else
+ 		\State \Return \textit{notFound}
+ 	\EndIf
+ \Else 
+ 	\State $\textrm{mid} \gets \ceil{(p+r)/2} $
+ 	\If $A[\textrm{mid}] > x$
+ 		\State \Return \Call{Bsearch}{$x$, $A$, $p$, $\textrm{mid}-1$}
+ 	\Else
+ 		\State \Return \Call{Bsearch}{$x$, $A$, $p$, $r$}
+ 	\EndIf
+ \EndIf
+\EndProcedure
+\\
+This is one of many correct versions of the algorithm."
+\end{algorithmic}
 \end{enumerate}
 \end{enumerate}
 \end{document}
