@@ -10,6 +10,9 @@
 \usepackage{amssymb}
 \usepackage[bookmarks=false]{hyperref} % for URL embedding
 \usepackage[noend]{algpseudocode} % for pseudocode
+\usepackage[usenames,dvipsnames]{pstricks} % for drawing
+\usepackage{epsfig}
+\usepackage{array}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % STUDENT: modify the following fields to reflect your
@@ -42,7 +45,7 @@
 % ``do { ... } while (cond)''
 \algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}%
 
-% ``for (x in y ... z)''
+% ``for (x in y ..bar. z)''
 \newcommand{\ForRange}[3]{\For{#1 \textbf{in} #2 \ \ldots \ #3}}
 
 % these are common math formatting commands that aren't defined by default
@@ -56,5 +59,58 @@
 \begin{document}
 
 % STUDENT: Your text goes here!
-test
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item (50\%)
+\begin{enumerate}
+
+\item Draw a figure showing a doubly-linked list containing three items, each of which holds an integer
+value. Label the head and tail of the list. Then draw an array containing the same three integer
+values in the same order.
+\\
+\\
+\begin{center}
+
+\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(0,-6.6)(4.66,6.6)
+\pscircle[linecolor=black, linewidth=0.04, dimen=outer](1.4,5.2){1.4}
+\pscircle[linecolor=black, linewidth=0.04, dimen=outer](1.4,0.0){1.4}
+\pscircle[linecolor=black, linewidth=0.04, dimen=outer](1.4,-5.2){1.4}
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291666666666667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8,3.8)(0.8,1.4)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291666666666667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8,-1.4)(0.8,-3.8)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291666666666667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,-3.8)(2.0,-1.4)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291666666666667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,1.4)(2.0,3.8)
+\rput[bl](1.2,5.0){\Huge \textbf{6}}
+\rput[bl](1.2,-0.2){\Huge \textbf{1}}
+\rput[bl](1.2,-5.4){\Huge \textbf{9}}
+\rput[bl](2.8,5.0){\huge \textbf{Head}}
+\rput[bl](2.8,-5.4){\huge \textbf{Tail}}
+\end{pspicture}
+}
+\end{center}
+\item Draw a table comparing the values of the functions $f(x) = x \log x$ (to the nearest integer) and
+$g(x) = x^2$
+
+for the following values of x: 1, 10, 100, 1000, 10000, and 100000.
+\\
+\\
+\begin{center}
+\begin{tabular}{|l|c|c|r|}
+\hline
+\textbf{$x$} & \textbf{$f(x)=x \log x$} & \textbf{$g(x)=x^2$}  \\
+\hline
+$1$          & $0$          & $1$       \\
+$10$        & $20$        & $100$        \\
+$100$ 		&$500$&$10000$\\
+$1000$&$6908$&$100000$\\
+$10000$&$92103$&$100000000$\\
+$100000$&$1151293$&$1000000000$\\
+\hline
+
+\end{tabular}
+\end{center}
+\end{enumerate}
+
+\end{enumerate}
 \end{document}
