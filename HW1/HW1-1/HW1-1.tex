@@ -59,7 +59,42 @@
 \begin{enumerate}
 \item (25\%)
 \begin{enumerate}
-\item
+\item What is the smallest problem size $n_0$ such that algorithm $\mathit{B}$ is (strictly) faster than algorithm $\mathit{A}$
+for all $n \geq n_0$?
+\\
+Setting $0.03n^2 = 0.15n \log n+0.00001n^2$, we find the these two functions intersect at $n=1.1772$ and $n=22.451$, and $0.03n^2$ is smaller over that interval.  Because $n=1$ is a trivial case, this means that the smallest number $n$ such that running time of $\mathit{B}=0.15n \log n+0.00001n^2$ seconds is faster than the running time of  $\mathit{A}= 0.03n^2$ seconds is at $n=23$ points.
+\\
+\item What is the smallest problem size $n_1$ such that algorithm $\mathit{C}$ is (strictly) faster than algorithm $\mathit{B}$ for all $n \geq n_1$?
+\\
+Setting the running time of $\mathit{B}$ equal to the running time of $\mathit{C}$, we must solve the following equation for $n$:
+\begin{align*}
+0.15n \log n > n
+\end{align*}
+Simple algebra results in the relation:
+\begin{align*}
+n > 2^{\frac{1}{.15}}= 2 ^{\frac{20}{3}} = 101.549
+\end{align*}
+So $\mathit{C}$ is strictly faster that $\mathit{B}$ for $n \geq 102$.
+\item Describe how to construct a distance computing algorithm that always achieves the best running time of any algorithm $\mathit{A}, \mathit{B} \textrm{, and } \mathit{C}$ on it's input.
+\\
+This would simply be to create an algorithm that runs either $\mathit{A}, \mathit{B} \textrm{, or } \mathit{C}$ based on input size.  So, we can create algorithm $D$ that runs either  $\mathit{A}, \mathit{B} \textrm{, or } \mathit{C}$ based on $n$, the size of the input:
+\begin{align*}
+D = 	\begin{cases}
+		A & \text{if } n < 23 \\
+		B & \text{if } 102>n\geq 23 \\
+		C & \text{if } n\geq 102
+	\end{cases}
+\end{align*}
+This would always result in the fastest possible output of all three algorithms.
+\\
+\item Professor Nikrasch suggests processing the Lotto results using a different clustering algorithm
+altogether, one which avoids computing distances between results. This new algorithm runs in $n^{1.2}$ seconds of an input of size $n$. Is this algorithm ever faster than the fastest of $\mathit{A}, \mathit{B} \textrm{, or } \mathit{C}$?  If so, for what value of $n$ does it start to win?
+\\
+In order to check if this new algorithm (call it $\mathit{E}$ for simplicity) is ever faster than the fastest of  $\mathit{A}, \mathit{B} \textrm{, or } \mathit{C}$, we can solve for $n$ in the following relation (where each character represents the runtime of the algorithm in terms of input size $n$):
+\begin{align*}
+E < D.
+\end{align*}
+Solving for this, we find that $n = 1.65235 \times 10^6$, or $1,652,350$ points.
 \end{enumerate}
 \end{enumerate}
 \end{document}
