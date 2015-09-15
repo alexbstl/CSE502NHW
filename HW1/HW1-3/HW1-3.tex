@@ -10,6 +10,7 @@
 \usepackage{amssymb}
 \usepackage[bookmarks=false]{hyperref} % for URL embedding
 \usepackage[noend]{algpseudocode} % for pseudocode
+\usepackage{qtree}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % STUDENT: modify the following fields to reflect your
@@ -22,7 +23,7 @@
 \newcommand{\StudentName}{Alex Bernstein}
 \newcommand{\WUSTLKey}{a.bernstein}
 \newcommand{\HomeworkNumber}{1}
-\newcommand{\ProblemNumber}{1}
+\newcommand{\ProblemNumber}{3}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % You can pretty much leave the stuff up to the next line of %%'s alone.
@@ -56,5 +57,44 @@
 \begin{document}
 
 % STUDENT: Your text goes here!
-test
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item (25\%)
+
+\begin{enumerate}
+\item The recurrence relation for $T(n)$ of the modified algorithm is: 
+\begin{align*}
+T(n) = 
+	\begin{cases}
+	C_0 & \text{if } x = 1 \\
+	5T(\frac{n}{5}) + cn & \text{otherwise}
+	\end{cases}
+\end{align*}
+This is the same as:
+\begin{align*}
+T(n) &= c_0n+ 5\sum_{k = 0}^{\log_5(\frac{n}{5})-1}cn
+\end{align*}
+\item Recurrence Tree:
+\noindent
+
+\begin{center}
+\Tree [.O O\\.\\.\\. O [.O O O O O O ] O O ]
+\end{center}
+
+
+
+\item We wish to show that $T(n) = \Theta(n \log (n))$
+\begin{align*}
+T(n) &= c_0n+ 5\sum_{k = 0}^{\log_5(\frac{n}{5})-1}cn \\&= n(c_0 + 5c\log_5 \Bigl(\frac{n}{5}\Bigr)-c)
+\\&= n(c_0+5c\log_5(n) - \log_5(5) -c)
+\\&= n(c_0+5c\log_5(n) - 1 -c)
+\\&= n(c_1+5c\log_5(n))
+\\&= n(c_1+5c\Bigl(\frac{\log_2(n)}{\log_2(5)} \Bigr))
+\\&= n(c_1+5c_2\log_2(n))
+\\&= nc_1 + c_3n\log_2(n)
+\\&= \Theta ( n \log(n))
+\end{align*}
+\item By dividing the problem into $m$ subproblems, we divide $n$ into $m$ pieces at each level, and repeat each subproblem $m$ times.  This results in a different logarithmic base and leading coefficient.  Because of the change of base, this changes the constant coefficient multiplier, which doesn't alter the asymptotic result.
+\end{enumerate}
+\end{enumerate}
 \end{document}

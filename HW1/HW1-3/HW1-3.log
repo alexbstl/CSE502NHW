@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=latex 2015.8.27)  15 SEP 2015 02:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=latex 2015.8.27)  15 SEP 2015 04:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**HW0-2.tex
-(./HW0-2.tex
+**HW1-3.tex
+(./HW1-3.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 4 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -294,203 +294,147 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip58
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (/home/alex/texmf/tex/latex/pstricks/pstricks.sty
-Package: pstricks 2013/12/12 v0.60 LaTeX wrapper for `PSTricks' (RN,HV)
+) (/home/alex/texmf/tex/latex/qtree/qtree.sty
+Package: 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
+Package: qtree 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/pict2e.sty
+Package: pict2e 2014/01/12 v0.2z Improved picture commands (HjG,RN,JT)
 
-(/home/alex/texmf/tex/generic/pstricks/pstricks.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/pst-xkey.tex
-File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
-
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/05/25 v2.7 package option processing (HA)
-
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks24
-\XKV@tempa@toks=\toks25
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/pict2e.cfg
+File: pict2e.cfg 2011/04/05 v0.1t pict2e configuration for teTeX/TeXLive
 )
-\XKV@depth=\count120
-File: xkeyval.tex 2014/05/25 v2.7 key=value parser (HA)
-)))
-(/home/alex/texmf/tex/generic/pstricks/pst-fp.tex
-`pst-fp' v0.05, 2010/01/17 (hv)
-\pstFP@xs=\count121
-\pstFP@xia=\count122
-\pstFP@xib=\count123
-\pstFP@xfa=\count124
-\pstFP@xfb=\count125
-\pstFP@rega=\count126
-\pstFP@regb=\count127
-\pstFP@regs=\count128
-\pstFP@times=\count129
+Package pict2e Info: Driver file: dvips.def on input line 119.
+Package pict2e Info: Driver file for pict2e: p2e-dvips.def on input line 121.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/p2e-dvips.def
+File: p2e-dvips.def 2011/04/05 v0.1t Driver-dependant file (RN,HjG,JT)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks26
-\pgfutil@tempdima=\dimen126
-\pgfutil@tempdimb=\dimen127
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
-ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks27
-\pgfkeys@temptoks=\toks28
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
-ex
-\pgfkeys@tmptoks=\toks29
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
-\pgf@x=\dimen128
-\pgf@xa=\dimen129
-\pgf@xb=\dimen130
-\pgf@xc=\dimen131
-\pgf@y=\dimen132
-\pgf@ya=\dimen133
-\pgf@yb=\dimen134
-\pgf@yc=\dimen135
-\c@pgf@counta=\count130
-\c@pgf@countb=\count131
-\c@pgf@countc=\count132
-\c@pgf@countd=\count133
-\pgfutil@tempcnta=\count134
-\pgfutil@tempcntb=\count135
+\pIIe@GRAPH=\toks24
+\@arclen=\dimen126
+\@arcrad=\dimen127
+\@tempdimd=\dimen128
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen136
-\pgfmath@count=\count136
-\pgfmath@box=\box29
-\pgfmath@toks=\toks30
-\pgfmath@stack@operand=\toks31
-\pgfmath@stack@operation=\toks32
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
-.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
-ric.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
-e.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
-.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
-tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
-.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
-tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
-thmetics.code.tex)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count137
-))
-\pgffor@iter=\dimen137
-\pgffor@skip=\dimen138
-\pgffor@stack=\toks33
-\pgffor@toks=\toks34
-)
-\psLoopIndex=\count138
+\c@treecount=\count120
+\c@branchcount=\count121
+\parentbox=\box29
+\treebox=\box30
+\treeboxone=\box31
+\treeboxtwo=\box32
+\treeboxthree=\box33
+\treeboxfour=\box34
+\treeboxfive=\box35
+\treeboxsix=\box36
+\treeboxseven=\box37
+\treeboxeight=\box38
+\treeboxnine=\box39
+\treeboxten=\box40
+\treeboxeleven=\box41
+\treeboxtwelve=\box42
+\treeboxthirteen=\box43
+\treeboxfourteen=\box44
+\treeboxfifteen=\box45
+\treeboxsixteen=\box46
+\treeboxseventeen=\box47
+\treeboxeighteen=\box48
+\treeboxnineteen=\box49
+\treeboxtwenty=\box50
+\treeoffsetone=\skip59
+\treeoffsettwo=\skip60
+\treeoffsetthree=\skip61
+\treeoffsetfour=\skip62
+\treeoffsetfive=\skip63
+\treeoffsetsix=\skip64
+\treeoffsetseven=\skip65
+\treeoffseteight=\skip66
+\treeoffsetnine=\skip67
+\treeoffsetten=\skip68
+\treeoffseteleven=\skip69
+\treeoffsettwelve=\skip70
+\treeoffsetthirteen=\skip71
+\treeoffsetfourteen=\skip72
+\treeoffsetfifteen=\skip73
+\treeoffsetsixteen=\skip74
+\treeoffsetseventeen=\skip75
+\treeoffseteighteen=\skip76
+\treeoffsetnineteen=\skip77
+\treeoffsettwenty=\skip78
+\treeshiftone=\skip79
+\treeshifttwo=\skip80
+\treeshiftthree=\skip81
+\treeshiftfour=\skip82
+\treeshiftfive=\skip83
+\treeshiftsix=\skip84
+\treeshiftseven=\skip85
+\treeshifteight=\skip86
+\treeshiftnine=\skip87
+\treeshiftten=\skip88
+\treeshifteleven=\skip89
+\treeshifttwelve=\skip90
+\treeshiftthirteen=\skip91
+\treeshiftfourteen=\skip92
+\treeshiftfifteen=\skip93
+\treeshiftsixteen=\skip94
+\treeshiftseventeen=\skip95
+\treeshifteighteen=\skip96
+\treeshiftnineteen=\skip97
+\treeshifttwenty=\skip98
+\treewidthone=\skip99
+\treewidthtwo=\skip100
+\treewidththree=\skip101
+\treewidthfour=\skip102
+\treewidthfive=\skip103
+\treewidthsix=\skip104
+\treewidthseven=\skip105
+\treewidtheight=\skip106
+\treewidthnine=\skip107
+\treewidthten=\skip108
+\treewidtheleven=\skip109
+\treewidthtwelve=\skip110
+\treewidththirteen=\skip111
+\treewidthfourteen=\skip112
+\treewidthfifteen=\skip113
+\treewidthsixteen=\skip114
+\treewidthseventeen=\skip115
+\treewidtheighteen=\skip116
+\treewidthnineteen=\skip117
+\treewidthtwenty=\skip118
+\daughteroffsetone=\skip119
+\daughteroffsettwo=\skip120
+\daughteroffsetthree=\skip121
+\daughteroffsetfour=\skip122
+\branchwidthone=\skip123
+\branchwidthtwo=\skip124
+\branchwidththree=\skip125
+\branchwidthfour=\skip126
+\parentoffset=\skip127
+\treeoffset=\skip128
+\daughteroffset=\skip129
+\branchwidth=\skip130
+\parentwidth=\skip131
+\treewidth=\skip132
+\qta=\toks25
+\qtb=\toks26
+\nbranches=\count122
+\qroofx=\count123
+\qroofy=\count124
+\@qrscratchbox=\box51
+) (./HW1-3.aux)
+\openout1 = `HW1-3.aux'.
 
-`PSTricks' v2.62  <2015/07/25> (tvz)
-\pst@dima=\dimen139
-\pst@dimb=\dimen140
-\pst@dimc=\dimen141
-\pst@dimd=\dimen142
-\pst@dimg=\dimen143
-\pst@dimh=\dimen144
-\pst@dimm=\dimen145
-\pst@dimn=\dimen146
-\pst@dimo=\dimen147
-\pst@dimp=\dimen148
-\pst@hbox=\box30
-\pst@ibox=\box31
-\pst@boxg=\box32
-\pst@cnta=\count139
-\pst@cntb=\count140
-\pst@cntc=\count141
-\pst@cntd=\count142
-\pst@cntg=\count143
-\pst@cnth=\count144
-\pst@cntm=\count145
-\pst@cntn=\count146
-\pst@cnto=\count147
-\pst@cntp=\count148
-\@zero=\count149
-\pst@toks=\toks35
-(/home/alex/texmf/tex/generic/pstricks/pstricks.con)
-\psunit=\dimen149
-\psxunit=\dimen150
-\psyunit=\dimen151
-\pst@C@@rType=\count150
-\pslinewidth=\dimen152
-\psk@startLW=\dimen153
-\psk@endLW=\dimen154
-\pst@customdefs=\toks36
-\pslinearc=\dimen155
-\pst@symbolStep=\dimen156
-\pst@symbolWidth=\dimen157
-\pst@symbolLinewidth=\dimen158
-\everypsbox=\toks37
-\psframesep=\dimen159
-\pslabelsep=\dimen160
-\sh@wgridXunit=\dimen161
-\sh@wgridYunit=\dimen162
-\pst@shift=\dimen163
-)
-File: pstricks.tex 2015/07/25 v2.62 `PSTricks' (tvz,hv)
-
-(/home/alex/texmf/tex/generic/pstricks/pst-fp.tex)
-File: pst-fp.tex 2015/07/25 v2.62 `PST-fp' (hv)
-
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package xcolor Info: Package option `usenames' ignored on input line 216.
-Package xcolor Info: Driver file: dvips.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
-File: dvipsnam.def 2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)
-)))
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
-Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
-\epsfxsize=\dimen164
-\epsfysize=\dimen165
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen166
-\extrarowheight=\dimen167
-\NC@list=\toks38
-\extratabsurround=\skip59
-\backup@length=\skip60
-) (./HW0-2.aux)
-\openout1 = `HW0-2.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: dvips
@@ -526,48 +470,31 @@ LaTeX Font Info:    ... okay on input line 59.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring OFF on input line 59.
+\AtBeginShipoutBox=\box52
+Package hyperref Info: Link coloring OFF on input line 57.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count151
+\c@section@level=\count125
 )
-LaTeX Info: Redefining \ref on input line 59.
-LaTeX Info: Redefining \pageref on input line 59.
-LaTeX Info: Redefining \nameref on input line 59.
+LaTeX Info: Redefining \ref on input line 57.
+LaTeX Info: Redefining \pageref on input line 57.
+LaTeX Info: Redefining \nameref on input line 57.
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--72
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--72
-
- []
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 98.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 98.
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 101--104
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--104
-
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -577,19 +504,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
- (./HW0-2.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 122.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 122.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
+ (./HW1-3.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 100.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 100.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
  ) 
 Here is how much of TeX's memory you used:
- 13550 strings out of 494978
- 222561 string characters out of 6180209
- 314154 words of memory out of 5000000
- 16620 multiletter control sequences out of 15000+600000
- 10413 words of font info for 39 fonts, out of 8000000 for 9000
+ 6836 strings out of 494978
+ 96944 string characters out of 6180209
+ 197944 words of memory out of 5000000
+ 10002 multiletter control sequences out of 15000+600000
+ 8596 words of font info for 33 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,11n,43p,402b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,16n,43p,360b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on HW0-2.dvi (1 page, 10340 bytes).
+Output written on HW1-3.dvi (1 page, 7332 bytes).
