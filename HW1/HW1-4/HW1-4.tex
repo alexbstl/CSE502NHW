@@ -8,6 +8,7 @@
 \usepackage{graphicx} % for figures
 \usepackage{amsmath}  % for extended math markup
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage[bookmarks=false]{hyperref} % for URL embedding
 \usepackage[noend]{algpseudocode} % for pseudocode
 
@@ -56,5 +57,72 @@
 \begin{document}
 
 % STUDENT: Your text goes here!
-test
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item (25\%)
+\begin{enumerate}
+\item Does $(n+1)^2 = \Omega(n \log n)$?
+\\
+True.
+\begin{proof}
+Let $f(n) = (n+1)^2$ and $g(n)= n \log n$
+Take 
+\begin{align*}
+\lim_{n \to \infty}\frac{f(n)}{g(n)} &= \lim_{n \to \infty} \frac{(n+1)^2}{n \log n}
+\\&= \lim_{n \to \infty} \frac{n^2+2n+1}{n \log n} 
+\\&= + \infty
+\end{align*}
+So, by the limit comparison test, $(n+1)^2 = \Omega(n \log n)$.
+\end{proof}
+\item Does $3^{9 \log n + \log \log n} = \Omega{(n^3)}$?
+\\
+True.
+\begin{proof}
+Note that:
+\begin{align*}
+f(n) = 3^{9 \log n + \log \log n} &= 3^{9 \log n }3^{\log \log n}
+\\&=3^{(\log n)^9} 3^{\log \log n}
+\\&=(3^{\log n})^9 3^{\log \log n}
+\\&=(n^{\log 3})^9 3^{\log \log n}
+\\&=n^{( \log 3)^9} 3^{\log \log n}
+\end{align*}
+Also note both that $\log_2(\log_2 (n)) \geq 1 \forall n\geq 4$, and $(\log_2(3))^9 \approx 63$ (it's actually slightly greater).  Therefore,
+$f(n)$ can be bounded below by $3n^{63}$  $\forall n \geq 4$.  Therefore:
+\begin{align*}
+\lim_{n \to \infty} \frac{3^{9 \log n + \log \log n}} {n^3} \geq \lim_{n \to \infty} \frac{3n^{63}}{n^3} = +\infty
+\end{align*} 
+\end{proof}
+\item Does $n \log_5 n = \Theta(n \ln n)$?
+\\
+True.
+\begin{proof}
+Note that:
+\begin{align*}
+n \log_5{5} = n \frac{\ln{n}}{\ln{5}}
+\end{align*}
+and that:
+\begin{align*}
+\lim_{n \to \infty} \frac{n \log_5{n}}{ n \ln{n}} = \lim_{n \to \infty}\frac{1}{\ln{5}}= \frac{1}{\ln{5}}
+\end{align*}
+Because this limit is a constant, $n \log_5{n} = \Theta(n \ln{n})$
+\end{proof}
+\newpage
+\item Does $(n-2)^2 = \Theta(n \log n)$?
+\\
+False.
+\begin{proof}
+Note that:
+\begin{align*}
+\lim_{n \to \infty}\frac{(n-2)^2}{n \log{n}} = \lim_{n \to \infty} \frac{n^2-4n+4}{n \log{n}} &= + \infty 
+\\&\neq c \textrm{  },\textrm{  } c < \infty
+\end{align*}
+Therefore, $(n-2)^2 \neq \Theta(n \log{n})$.
+\end{proof}
+\item Does $n^{\frac{61}{60}}= \mathcal{O}(n \log{n})$?
+\\
+\begin{proof}
+
+\end{proof}
+\end{enumerate}
+\end{enumerate}
 \end{document}
