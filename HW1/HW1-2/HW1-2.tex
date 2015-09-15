@@ -56,5 +56,35 @@
 \begin{document}
 
 % STUDENT: Your text goes here!
-test
+\begin{enumerate}
+\setcounter{enumi}{1}
+
+\item (25\%)
+\begin{enumerate}
+\item 
+
+\begin{algorithmic}
+\State $j \gets 1 $ \Comment{1 time}
+\While{$ j < n $} \Comment{n-1 times}
+    \State $S_1$  \Comment{n-2 times}
+	\State $k \gets n$ \Comment{n-2 times}
+	\While{$k > j$} \Comment{n-j times}
+		\State $S_2$ \Comment{n-j-1 times}
+		\State $k--$ \Comment{n-j-1 times}
+	\EndWhile
+	\State $j++$ \Comment{n-2 times}
+\EndWhile
+\end{algorithmic}
+
+For the inner statements, this can be represented by:
+\begin{align*}
+T(n) &= C_0 + \sum_{i=1}^{n-1}(C_1+S_1+\sum_{j=i}^{n-1}(S_2+C_2))
+\\&= C_0+\sum_{i=1}^{n-1}(C_1+S_1+(n-1-i)(S_2+C_2))
+\\&=C_0+(n-2)(C_1+S_1)+(S_2+C_2)\sum_{i=1}^{n-1}(n-1-i)
+\\&=C_0+(n-2)(C_1+S_1)+(S_2+C_2)\Bigl(n(n-2)-(n-2)-\frac{n(n-1)}{2}\Bigr)
+\\&=C_0+(n-2)(C_1+S_1)+(S_2+C_2)\Bigl(\frac{n^2}{2} - \frac{5n}{2}+2 \Bigr)
+\\&=C_0 + (n-2)C_1'+C_2'\Bigl(\frac{n^2}{2} - \frac{5n}{2}+2 \Bigr)
+\end{align*}
+\end{enumerate}
+\end{enumerate}
 \end{document}
