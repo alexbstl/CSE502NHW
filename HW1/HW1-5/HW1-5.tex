@@ -78,7 +78,7 @@ c_0 & \text{ if } n \leq 2 \\
 \begin{center}
 \Tree [.O [.O O\\.\\.\\.\\$c_0$ O\\.\\.\\.\\$c_0$ ] [.O O\\.\\.\\.\\$c_0$ O\\.\\.\\.\\$c_0$ ] ]
 \end{center}
-where the work per node is given by $\frac{b}{2^k}+\frac{cn}{2^k}\log (\frac{n}{2^k})$.  The work per level can be generalized to be $2^k( \frac{b}{2^k} \frac{cn}{2^k} \log(\frac{n}{2^k}))=bn+cn\log(\frac{n}{2^k})$.
+where the work per node is given by $\frac{b}{2^k}+\frac{cn}{2^k}\log (\frac{n}{2^k})$ for levels $0,...,\log n -2$.  The work per level can be generalized to be $2^k( \frac{b}{2^k} \frac{cn}{2^k} \log(\frac{n}{2^k}))=bn+cn\log(\frac{n}{2^k})$.
 Summing the total work, this looks like:
 \begin{align*}
 T(n) &= c_0 \frac{n}{2} + \sum_{k=0}^{\log n-2} (bn + cn \log(\frac{n}{2^k})
@@ -104,7 +104,47 @@ T(n) =  \Theta(n (\log n)^2)
 Suppose that the two recursive calls in the algorithm are modified to return both the closest pairs on left and right \textit{and} two arrays containing all the left and right points, respectively, each sorted by $y$-coordinate.  (Clearly, we can compute such a sorted array in constant time when $n \leq 2$.)  Describe in pseudocode how to combine these two arrays in time $\Theta(n)$ to produce an array of \textit{all} input points sorted by $y$. Justify the correctness and running time of your solution.
 \\
 \\
+Two arrays, each sorted by $y$ value, can be combined with the following algorithm where \texttt{yLeft} is the $y$-sorted algorithm for the left side and \texttt{yRight} is the $y$-sorted algorithm for the right side.:
+\\
+\begin{algorithmic}
+\Procedure{CombineArrays}{\texttt{yLeft},\texttt{yRight},$n$} \Comment{$n=\texttt{yLeft.length}+\texttt{yRight.length}$}
+\State \texttt{leftCounter}$ \gets0$ 
+\State \texttt{rightCounter}$ \gets0$ 
+\State $j \gets 0$
+\While{$j < n$} \Comment{n+1 times}
+	\If \texttt{leftCounter}$<$\texttt{yLeft.length-1} and \texttt{rightCounter-1}$<$\texttt{yRight.length} \Comment{n times}
+	\If \texttt{yLeft[leftCounter].y} $<$ \texttt{yRight[rightCounter].y} \Comment{at most $\frac{n}{2}$ times}
+		\State \texttt{combinedArray[j]}$=$\texttt{yLeft[leftCounter]} \Comment{at most $\frac{n}{2}$ times}
+ 		\State \texttt{leftCounter++} \Comment{at most $\frac{n}{2}$ times}
+ 	\Else
+ 		\If \texttt{yLeft[leftCounter].y} $>$ \texttt{yRight[rightCounter].y} \Comment{at most $\frac{n}{2}$ times}
+		\State \texttt{combinedArray[j]}$=$\texttt{yRight[rightCounter]} \Comment{at most $\frac{n}{2}$ times}
+		\State \texttt{rightCounter++} \Comment{at most $\frac{n}{2}$ times}
+		\Else \Comment{always choose the point from yLeft if points equal}
+			\State \texttt{combinedArray[j]}$=$\texttt{yLeft[leftCounter]}
+			\State \texttt{leftCounter++} 
+		\EndIf
+	\EndIf
+	
+	\Else \Comment{ These statements run $\frac{n}{2}$ times if \texttt{yLeft} and \texttt{yRight} have the same length}
+		\If \texttt{leftCounter}$=$\texttt{yLeft.length-1}
+			\State \texttt{combinedArray[j]}$=$\texttt{yLeft[leftCounter]}
+			\State \texttt{leftCounter++} 
+		\Else \Comment{i.e. \texttt{rightCounter}$=$\texttt{yRight.length-1}}
+			\State \texttt{combinedArray[j]}$=$\texttt{yRight[rightCounter]}
+			\State \texttt{rightCounter++} 
+		\EndIf 
+	\EndIf
+	\State $j++$ \Comment{n times}
+\EndWhile
+\Return \texttt{combinedArray}
+\EndProcedure
 
+\end{algorithmic}
+
+Note that each statement in the algorithm above runs either a constant or linear, because each operation is a single step, and we only run a single iteration loop.  Therefore, each step runs at most $n+1$ times, and \texttt{combinedArrays}$= \Theta(n)$.
+\\
+Correctness follows from inspection.  Note that all the points in \texttt{yLeft} will always have lower $x$ coordinate values than the points in \texttt{yRight}.  The algorithm will always put the lower $y-$value from the next available index in either \texttt{yLeft} or \texttt{yRight}.  If all of values from either \texttt{yLeft} or \texttt{yRight} have already been used, this algorithm will simply fill the remaining slots in \texttt{combinedArrays} with the remaining values from the other array.
 \end{enumerate}
 \end{enumerate}
 \end{document}
