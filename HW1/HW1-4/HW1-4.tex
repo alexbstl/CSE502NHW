@@ -81,15 +81,14 @@ True.
 Note that:
 \begin{align*}
 f(n) = 3^{9 \log n + \log \log n} &= 3^{9 \log n }3^{\log \log n}
-\\&=3^{(\log n)^9} 3^{\log \log n}
-\\&=(3^{\log n})^9 3^{\log \log n}
-\\&=(n^{\log 3})^9 3^{\log \log n}
-\\&=n^{( \log 3)^9} 3^{\log \log n}
+\\&=3^{(\log n^9)} 3^{\log \log n}
+\\&=(n^9)^{\log(3)} 3^{\log \log n}
+\\&=n^{9 \log(3)} 3^{\log \log n}
 \end{align*}
-Also note both that $\log_2(\log_2 (n)) \geq 1 \forall n\geq 4$, and $(\log_2(3))^9 \approx 63$ (it's actually slightly greater).  Therefore,
-$f(n)$ can be bounded below by $3n^{63}$  $\forall n \geq 4$.  Therefore:
+Also note both that $\log_2(\log_2 (n)) \geq 1 \forall n\geq 4$, and $9(\log_2(3)) \approx 14$ (it's actually slightly greater).  Therefore,
+$f(n)$ can be bounded below by $3n^{14}$  $\forall n \geq 4$.  Therefore:
 \begin{align*}
-\lim_{n \to \infty} \frac{3^{9 \log n + \log \log n}} {n^3} \geq \lim_{n \to \infty} \frac{3n^{63}}{n^3} = +\infty
+\lim_{n \to \infty} \frac{3^{9 \log n + \log \log n}} {n^3} \geq \lim_{n \to \infty} \frac{3n^{14}}{n^3} = +\infty
 \end{align*} 
 \end{proof}
 \item Does $n \log_5 n = \Theta(n \ln n)$?
@@ -120,8 +119,41 @@ Therefore, $(n-2)^2 \neq \Theta(n \log{n})$.
 \end{proof}
 \item Does $n^{\frac{61}{60}}= \mathcal{O}(n \log{n})$?
 \\
+False.
 \begin{proof}
-
+\begin{align*}
+\lim_{n \to \infty} \frac{n^{\frac{61}{60}}}{n \log n}= + \infty
+\end{align*}
+Therefore, $n^{\frac{61}{60}}$ is not $\mathcal{O}(n \log{n})$ but it is $\Omega(n \log{n})$.
+\end{proof}
+\item Let $f(n)$ and $g(n)$ be non-negative functions of $n$.  If $f(n)=\mathcal{O}(g(n))$, does $f(n)+g(n)= \Theta(g(n))$?
+\\
+True.
+\begin{proof}
+Because $f(n)=\mathcal{O}(g(n))$:
+\begin{align*}
+\lim_{n \to \infty} \frac{f(n)}{g(n)} = 0.
+\end{align*}
+Therefore, we have:
+\begin{align*}
+\lim_{n \to \infty} \frac{f(n)+g(n)}{g(n)} &= \lim_{n \to \infty} \frac{f(n)}{g(n)} + \frac{g(n)}{g(n)}=1
+\\&=\lim_{n \to \infty} 0 + \lim_{n \to \infty} \frac{g(n)}{g(n)} = 1 < \infty.
+\end{align*}
+Therefore, $f(n)+g(n)= \Theta(g(n))$.
+\end{proof}
+\item Let $f(n)$ and $g(n)$ be non-negative functions of $n$.  If $f(n)=\Theta(g(n))$, does $\frac{f(n)}{g(n)}= \Theta(1)$?
+\\
+True.
+\begin{proof}
+By the provided relation, we know:
+\begin{align*}
+\lim_{n \to \infty}\frac{f(n)}{g(n)}=c< \infty.
+\end{align*}
+Therefore, it is trivial to show that:
+\begin{align*}
+\lim_{n \to \infty}\frac{\Bigl(\frac{f(n)}{g(n)}\Bigr)}{1}=\lim_{n \to \infty}\frac{f(n)}{g(n)} = c< \infty.
+\end{align*}
+Therefore, $\frac{f(n)}{g(n)} = \Theta(1)$.
 \end{proof}
 \end{enumerate}
 \end{enumerate}
