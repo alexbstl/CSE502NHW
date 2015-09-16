@@ -10,6 +10,8 @@
 \usepackage{amssymb}
 \usepackage[bookmarks=false]{hyperref} % for URL embedding
 \usepackage[noend]{algpseudocode} % for pseudocode
+\usepackage{qtree}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % STUDENT: modify the following fields to reflect your
@@ -17,12 +19,13 @@
 
 % Example: 
 %\newcommand{\StudentName}{Jeremy Buhler}
-%\newcommand{\WUSTLKey}{jbuhler}
+%\newcommand{\WUSTLKey}{jbuhler}\usepackage{qtree}
+
 
 \newcommand{\StudentName}{Alex Bernstein}
 \newcommand{\WUSTLKey}{a.bernstein}
 \newcommand{\HomeworkNumber}{1}
-\newcommand{\ProblemNumber}{1}
+\newcommand{\ProblemNumber}{5}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % You can pretty much leave the stuff up to the next line of %%'s alone.
@@ -54,7 +57,54 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item (25\%)
 
-% STUDENT: Your text goes here!
-test
+\begin{enumerate}
+\item Write a recurrence for the running time of the modified closest-pair algorith, in terms of the number of points $n$.
+\\
+\\Because the Sorting Algorithm we are using is $\Theta(n \log n)$, the recurrence relation is: 
+\begin{align*}
+T(n) = 
+\begin{cases}
+c_0 & \text{ if } n \leq 2 \\
+2T(\frac{n}{2}) + bn + cn \log{n} & \text{ if } n>2
+\end{cases}
+\end{align*}
+\item  Sketch the recursion tree for this recurrence and derive a non-recursive (but not necessarily closedform) exact expression for its solution.
+\\
+\\The recursion tree looks like:
+\begin{center}
+\Tree [.O [.O O\\.\\.\\.\\$c_0$ O\\.\\.\\.\\$c_0$ ] [.O O\\.\\.\\.\\$c_0$ O\\.\\.\\.\\$c_0$ ] ]
+\end{center}
+where the work per node is given by $\frac{b}{2^k}+\frac{cn}{2^k}\log (\frac{n}{2^k})$.  The work per level can be generalized to be $2^k( \frac{b}{2^k} \frac{cn}{2^k} \log(\frac{n}{2^k}))=bn+cn\log(\frac{n}{2^k})$.
+Summing the total work, this looks like:
+\begin{align*}
+T(n) &= c_0 \frac{n}{2} + \sum_{k=0}^{\log n-2} (bn + cn \log(\frac{n}{2^k})
+\\&= c_0 \frac{n}{2} + b\frac{(\log n-1)(\log n -2)}{2}+ cn\sum_{k=0}^{\log n-2}\log(\frac{n}{2^k})
+\\&= c_0 \frac{n}{2} + b \frac{(\log n-1)(\log n -2)}{2} + cn\sum_{k=0}^{\log n-2}(\log n - \log{2^k})
+\\&=c_0 \frac{n}{2} + b \frac{(\log n-1)(\log n -2)}{2} + cn(\log n) (\log n -1)- cn \log 2 \sum_{k=0}^{\log n-2} k
+\\&=c_0 \frac{n}{2} + b \frac{(\log n-1)(\log n -2)}{2} + cn(\log n) (\log n -1)- cn\frac{(\log n -2)(\log n -1)}{2}
+\\&= c_0 \frac{n}{2} +(\log n-1)(\log n -2)(\frac{b}{2}+ \frac{cn}{2})
+\\&= c_0 \frac{n}{2} + b'((\log n)^2 - 3 \log n +2)+c'n((\log n)^2 - 3 \log n +2)
+\\T(n)&= c_0 \frac{n}{2} + b'((\log n)^2 - 3 \log n)+b" + c'n(\log n)^2 - c_1'n \log n + c"
+\end{align*}
+\newpage
+\item Show that the expression you got in part \textbf{(b)} is $\Theta(n (\log n)^2$.\\
+Taking the limit of $\frac{T(n)}{n (\log n)^2}$ it is clear that:
+\begin{align*}
+\lim_{n \to \infty} \Bigl( \frac{T(n)}{n(\log n)^2} \Bigr)= c < \infty
+\end{align*}
+where $c$ is an arbitrary constant not pulled from the previous relations.  Therefore:
+\begin{align*}
+T(n) =  \Theta(n (\log n)^2)
+\end{align*}
+\item Professor Strammermax claims that the running time of the new algorithm can be reduced to $\Theta( n \log n)$.  The key idea is to \textit{reconstruct} the sorted \texttt{ptsByY} array dynamically inside the algorithm.\\
+Suppose that the two recursive calls in the algorithm are modified to return both the closest pairs on left and right \textit{and} two arrays containing all the left and right points, respectively, each sorted by $y$-coordinate.  (Clearly, we can compute such a sorted array in constant time when $n \leq 2$.)  Describe in pseudocode how to combine these two arrays in time $\Theta(n)$ to produce an array of \textit{all} input points sorted by $y$. Justify the correctness and running time of your solution.
+\\
+\\
+
+\end{enumerate}
+\end{enumerate}
 \end{document}
