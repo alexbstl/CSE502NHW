@@ -8,6 +8,7 @@
 \usepackage{graphicx} % for figures
 \usepackage{amsmath}  % for extended math markup
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage[bookmarks=false]{hyperref} % for URL embedding
 \usepackage[noend]{algpseudocode} % for pseudocode
 
@@ -21,7 +22,7 @@
 
 \newcommand{\StudentName}{Alex Bernstein}
 \newcommand{\WUSTLKey}{a.bernstein}
-\newcommand{\HomeworkNumber}{1}
+\newcommand{\HomeworkNumber}{2}
 \newcommand{\ProblemNumber}{1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -56,11 +57,14 @@
 \begin{document}
 
 % STUDENT: Your text goes here!
-Everything will be of the form
-\begin{align*}
-f\Big(\frac{n}{b^{\log_b(\frac{n}{n_0})+i}}\Big)
-&\\= f\Big(\frac{n}{b^{\log_b(n)- \log_b(n_0)+i}}\Big)
-\\= f\Big(\frac{n}{nb^{- \log_b(n_0)+i}}\Big)
-\\=f\Big(\frac{1}{b^{- \log_b(n_0)+i}}\Big)
-\end{align*}
+\begin{enumerate}
+\item (25\%)  What Asymtotic solution, if any, does the master method give  for each of the following recurrences?
+\\
+\begin{enumerate}
+\item $T(n) = 16T(\frac{n}{2}) + 3n^4\log^2(n) = \Theta(n^4 \log^2(n))$
+\begin{proof}
+Let $a = 16$, $b = 2$, $f(n) = 3n^4 \log^2(n)$
+\end{proof}
+\end{enumerate}
+\end{enumerate}
 \end{document}
