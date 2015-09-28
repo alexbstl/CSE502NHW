@@ -1,0 +1,281 @@
+%
+% CSE Electronic Homework Template
+% Last modified 4/20/2015 by Jeremy Buhler
+
+\documentclass[11pt]{article}
+\usepackage[left=0.7in,right=0.7in,top=0.7in,bottom=0.7in]{geometry}
+\usepackage{fancyhdr} % for header
+\usepackage{graphicx} % for figures
+\usepackage{amsmath}  % for extended math markup
+\usepackage{amssymb}
+\usepackage[bookmarks=false]{hyperref} % for URL embedding
+\usepackage[noend]{algpseudocode} % for pseudocode
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% STUDENT: modify the following fields to reflect your
+% name/WUSTL Key, the current homework, and the current problem number
+
+% Example: 
+%\newcommand{\StudentName}{Jeremy Buhler}
+%\newcommand{\WUSTLKey}{jbuhler}
+
+\newcommand{\StudentName}{Alex Bernstein}
+\newcommand{\WUSTLKey}{a.bernstein}
+\newcommand{\HomeworkNumber}{2}
+\newcommand{\ProblemNumber}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You can pretty much leave the stuff up to the next line of %%'s alone.
+
+% create header and footer for every page
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{\StudentName{} (\WUSTLKey)}}
+\chead{\textbf{Homework \HomeworkNumber}}
+\rhead{\textbf{Problem \ProblemNumber}}
+\cfoot{\thepage}
+
+% preferred pseudocode style
+\algrenewcommand{\algorithmicprocedure}{}
+\algrenewcommand{\algorithmicthen}{}
+
+% ``do { ... } while (cond)''
+\algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}%
+
+% ``for (x in y ... z)''
+\newcommand{\ForRange}[3]{\For{#1 \textbf{in} #2 \ \ldots \ #3}}
+
+% these are common math formatting commands that aren't defined by default
+\newcommand{\union}{\cup}
+\newcommand{\isect}{\cap}
+\newcommand{\ceil}[1]{\ensuremath \left\lceil #1 \right\rceil}
+\newcommand{\floor}[1]{\ensuremath \left\lfloor #1 \right\rfloor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% STUDENT: Your text goes here!
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item (25\%)
+Suppose you have an empty hash table $T$ with $m = 8$ slots that stores
+integer records (i.e.\ the record and its key are one and the same).
+The table resolves collisions by open addressing with double hashing,
+and its hash functions are $h_1(k) = (5 \cdot k) \bmod 8$ and
+$h_2(k) = (3 \cdot k) \bmod 7 + 1$.  (\textit{Disclaimer}: these are
+\emph{not} good hash functions, just examples to help you reinforce
+your understanding of open-addressed hashing.)
+
+\begin{enumerate}
+\item
+
+Sketch diagrams showing the state of the hash table and give its load
+factor after \emph{each} of the following series of calls:
+\begin{enumerate}
+\item 
+\begin{verbatim}
+T.insert(293)
+\end{verbatim}
+\begin{center}
+\begin{tabular}{|c | c|}
+\hline
+Index & Slot Value\\
+\hline
+0 & \\
+\hline
+1 & * \\
+\hline
+2 & \\
+\hline
+3 & \\
+\hline
+4 & \\
+\hline
+5 & \\
+\hline
+6 & \\
+\hline
+7 &  \\
+\hline
+\end{tabular}
+\end{center}
+Load Factor = $\frac{1}{8}$
+\item
+\begin{verbatim}
+T.insert(30181)
+\end{verbatim}
+\begin{center}
+\begin{tabular}{|c | c|}
+\hline
+Index & Slot Value\\
+\hline
+0 & \\
+\hline
+1 & * \\
+\hline
+2 & \\
+\hline
+3 & \\
+\hline
+4 & \\
+\hline
+5 & \\
+\hline
+6 & \\
+\hline
+7 & * \\
+\hline
+\end{tabular}
+\end{center}
+Load Factor = $\frac{2}{8}$
+\item
+\begin{verbatim}
+T.insert(38388)
+\end{verbatim}
+\begin{center}
+\begin{tabular}{|c | c|}
+\hline
+Index & Slot Value\\
+\hline
+0 & \\
+\hline
+1 & *\\
+\hline
+2 & \\
+\hline
+3 & \\
+\hline
+4 & *\\
+\hline
+5 & \\
+\hline
+6 & \\
+\hline
+7 & *\\
+\hline
+\end{tabular}
+\end{center}
+Load Factor = $\frac{3}{8}$
+\item
+\begin{verbatim}
+T.insert(62)
+\end{verbatim}
+\begin{center}
+\begin{tabular}{|c | c|}
+\hline
+Index & Slot Value\\
+\hline
+0 & \\
+\hline
+1 & *\\
+\hline
+2 & \\
+\hline
+3 & \\
+\hline
+4 & *\\
+\hline
+5 & \\
+\hline
+6 & *\\
+\hline
+7 & *\\
+\hline
+\end{tabular}
+\end{center}
+Load Factor = $\frac{4}{8}$
+\item
+\begin{verbatim}
+T.insert(3421)
+\end{verbatim}
+\begin{center}
+\begin{tabular}{|c | c|}
+\hline
+Index & Slot Value\\
+\hline
+0 & \\
+\hline
+1 & *\\
+\hline
+2 & \\
+\hline
+3 & *\\
+\hline
+4 & *\\
+\hline
+5 & \\
+\hline
+6 & *\\
+\hline
+7 & *\\
+\hline
+\end{tabular}
+\end{center}
+Load Factor = $\frac{5}{8}$
+\\
+\item
+\begin{verbatim}
+T.delete(293)
+\end{verbatim}
+\begin{center}
+\begin{tabular}{|c | c|}
+\hline
+Index & Slot Value\\
+\hline
+0 & \\
+\hline
+1 & \texttt{deleted}\\
+\hline
+2 & \\
+\hline
+3 & *\\
+\hline
+4 & *\\
+\hline
+5 & \\
+\hline
+6 & *\\
+\hline
+7 & *\\
+\hline
+\end{tabular}
+\end{center}
+Load Factor = $\frac{4}{8}$
+\\
+\end{enumerate}
+
+\item 
+After the hash table $T$ has performed the above operations, what is the
+sequence of slots in the table inspected by each of the following
+\texttt{find} operations before it returns?
+
+\begin{enumerate}
+
+
+\item
+\begin{verbatim}
+T.find(293)
+\end{verbatim}
+$h_1(293) = 1$, and $h_2(k) = 5$, so this operation will check, in order, Slots: $1 \to 6 \to 3 \to 0 \to 5 \to 2 \to 7 \to 4$.  Because slot 1 is \texttt{deleted}, it will look at the next slot, and therefore return whatever is in slot $6$.
+\item
+\begin{verbatim}
+T.find(38924)
+\end{verbatim}
+$h_1(38924) = 4$, and $h_2(38924) = 6$.  Because Slot $4$ is full from above, it will return the item stored in that slot  The order of slots is: $4 \to 2 \to 0 \to 6 \to 4...$.
+\item
+\begin{verbatim}
+T.find(62)
+\end{verbatim}
+$h_1(62) = 6$ and $h_2(62) = 5$.  The order of slots is therefore: $6 \to 3 \to 0 \to 5 \to 2 \to 7 \to 4 \to 1$.  Because slot $6$ has an item, it will return whatever is in that slot.
+\end{enumerate}
+\item
+Just to show that the above table and hash function parameters aren't
+great, give an example of a key for which the \texttt{insert} operation
+could fail even if the table is not full.  Explain why insertion could
+fail for this key.
+
+We can use the example above, where will \texttt{T.insert(38924)} fail even if slots 1, 3, 5, and 7 are open if the remaining slots are filled.  In this case $h_1(38924) = 4$, and $h_2(38924) = 6$.  Insert will fail if slots 0, 2, 4, and 6 are filled because $h_2(38924)$ shares a common divisor with $8$, $h_1(38924) + i*h_2(38924)$ will form a cyclic subgroup of $\mathbb{Z}\bmod8$, and thus will not reach every slot.
+\end{enumerate}
+\end{enumerate}
+\end{document}
