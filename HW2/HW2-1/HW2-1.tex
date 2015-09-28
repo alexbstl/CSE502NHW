@@ -58,7 +58,7 @@
 
 % STUDENT: Your text goes here!
 \begin{enumerate}
-\item (25\%)  What Asymtotic solution, if any, does the master method give  for each of the following recurrences?
+\item (25\%)  What Asymptotic solution, if any, does the master method give  for each of the following recurrences?
 \\
 \begin{enumerate}
 \item $T(n) = 16T(\frac{n}{2}) + 3n^4\log^2(n) = \Theta(n^4 \log^2(n))$.
@@ -105,9 +105,9 @@ However, for any $\epsilon \in \mathbb{R^+}$ (i.e. $\epsilon>0$),
 So, we can say that $f(n) = \Omega(n^{1-\epsilon}) \text{ } \forall \epsilon>0$.  For the same conditions on $\epsilon$, we can say that $f(n) = \mathcal{O}(n^{1+\epsilon})$.
 Therefore we cannot extract any useful information about this recurrence from the Master Method.
 \end{proof}
-\item $T(n) =  9 T\left(\frac{n}{4}\right) + 2n^{\log_4 9}$ cannot be solved via the Master Method.
+\item $T(n) =  9 T\left(\frac{n}{4}\right) + 2n^{\log_4 9}= \Theta \left(n^{\log_4(9)}\log(n)\right)$.
 \begin{proof}
-Let $a = 9$, $b=4$, and $f(n) = 2n^{\log_4(9)}$.  It is trivial to show that, $f(n) = \Theta\left(n^{\log_4(9)}\right)$.  Therefore, $f(n) = \mathcal{O}(n^{\log_4(9) + \epsilon})$ and $f(n) = \Omega(n^{\log_4(9) - \epsilon})$ $\forall \epsilon>0$.  Therefore, we cannot extract any useful information from the Master Method for this problem. 
+Let $a = 9$, $b=4$, and $f(n) = 2n^{\log_4(9)}$.  It is trivial to show that, $f(n) = \Theta\left(n^{\log_4(9)}\right) = \Theta\left(n^{\log_4(9)}\log^0(n)\right)$.  Therefore, via the Master Method, we can say that $T(n)=\Theta\left(n^{\log_4(9)} \log(n) \right)$. 
 \end{proof}
 \item $T(n) =  11 T\left(\frac{n}{3}\right) + n^2 = \Theta\left(n^{\log_3(11)}\right)$.
 \begin{proof}

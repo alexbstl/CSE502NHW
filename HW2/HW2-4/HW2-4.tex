@@ -1,0 +1,141 @@
+%
+% CSE Electronic Homework Template
+% Last modified 4/20/2015 by Jeremy Buhler
+
+\documentclass[11pt]{article}
+\usepackage[left=0.7in,right=0.7in,top=0.7in,bottom=0.7in]{geometry}
+\usepackage{fancyhdr} % for header
+\usepackage{graphicx} % for figures
+\usepackage{amsmath}  % for extended math markup
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[bookmarks=false]{hyperref} % for URL embedding
+\usepackage[noend]{algpseudocode} % for pseudocode
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% STUDENT: modify the following fields to reflect your
+% name/WUSTL Key, the current homework, and the current problem number
+
+% Example: 
+%\newcommand{\StudentName}{Jeremy Buhler}
+%\newcommand{\WUSTLKey}{jbuhler}
+
+\newcommand{\StudentName}{Alex Bernstein}
+\newcommand{\WUSTLKey}{a.bernstein}
+\newcommand{\HomeworkNumber}{1}
+\newcommand{\ProblemNumber}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You can pretty much leave the stuff up to the next line of %%'s alone.
+
+% create header and footer for every page
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{\StudentName{} (\WUSTLKey)}}
+\chead{\textbf{Homework \HomeworkNumber}}
+\rhead{\textbf{Problem \ProblemNumber}}
+\cfoot{\thepage}
+
+% preferred pseudocode style
+\algrenewcommand{\algorithmicprocedure}{}
+\algrenewcommand{\algorithmicthen}{}
+
+% ``do { ... } while (cond)''
+\algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}%
+
+% ``for (x in y ... z)''
+\newcommand{\ForRange}[3]{\For{#1 \textbf{in} #2 \ \ldots \ #3}}
+
+% these are common math formatting commands that aren't defined by default
+\newcommand{\union}{\cup}
+\newcommand{\isect}{\cap}
+\newcommand{\ceil}[1]{\ensuremath \left\lceil #1 \right\rceil}
+\newcommand{\floor}[1]{\ensuremath \left\lfloor #1 \right\rfloor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% STUDENT: Your text goes here!
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item (25\%)
+This problem is an example of \textit{universal hashing},
+a strategy for picking hash functions for a hash table randomly so
+that no input always exhibits bad hashing behavior.
+
+Let $p$ be a prime number.  I want to hash pairs of numbers $(x,y)$,
+where $x$ and $y$ are always between 0 and $p-1$ inclusive.  I
+decide to use a chained hash table with hash function
+\[
+h_{a,b}(x,y) = (ax + by) \bmod p
+\]
+where $a$ and $b$ also lie between 0 and $p-1$.
+\begin{enumerate}
+\item Suppose that my $a$ and $b$ are fixed, and that you've discovered what
+they are (perhaps by hacking into my computer).  Describe how to
+generate $p$ distinct input pairs $(x_i, y_i)$ for which
+$h_{a,b}(x_i,y_i)$ yields the same value.  That is, all the inputs
+$(x_i,y_i)$ will hash to the same slot of my table.
+
+\textit{(\textbf{Hint}: for any $c$, $1 \leq c < p$, and every $i$, $0
+\leq i < p$, there exists exactly one $j$, $0 \leq j < p$ for which
+$cj \equiv i \pmod p$.)}
+
+
+
+\item To defend against your malicious hackery, I have decided not to fix
+$a$ and $b$ once and for all, but rather to choose them randomly every
+time I instantiate my hash table class.  Each value will be chosen
+uniformly at random (with replacement) from the range $0 \ldots p-1$.
+
+Fix two non-identical inputs $(x,y)$ and $(x',y')$.  (They may have
+the same $x$ or $y$ values, but not both.) For how many distinct pairs
+$(a,b)$ will these two inputs hash to the same slot?
+
+(Use the hint from part (a)).
+
+\begin{proof}
+Given any $(x,y)$ and $(x',y')$ we wish to find the number of pairs $(a,b)$ such that:
+\begin{align*}
+(ax+by)\bmod p = (ax'+by')\bmod p \text{ and } \\
+(ax+by)\bmod p - (ax'+by')\bmod p = 0 
+ \end{align*}
+ given that $a,b,x,y,x',y' \in \mathbb{Z}_p = \{0,1,2,\ldots,p-1\}$.  This is the same as the following expression:
+\begin{align*}
+ (ax+by)-(ax'+by') = mp
+\end{align*}
+where $m \in \mathbb{Z}$ because $mp$ is congruent to $0 \bmod p$ $\forall m \in \mathbb{Z}$.
+Therefore, we can say:
+\begin{align*}
+a(x-x')+b(y-y')  &= mp
+\\&=0 \bmod p
+\end{align*}  
+Based on the initial assumptions, we are left with 2 cases:
+\begin{enumerate}
+\item $x=x'$ or $y=y'$.
+\\
+Without lose of generality, assume that $x=x'$ and $y \neq y'$.  In this case, from the previous expression, we have:
+\begin{align*}
+a(0) + b(y-y')= 0 \bmod p
+\end{align*}
+Because $a(0) = 0$, we must have that:$
+b(y-y') = 0$.  $y-y'\neq 0$ is fixed, therefore, by the hint in part \textbf{(a)}, we must choose the unique $b$ such that $b(y-y')=0$.  Therefore, there can only be a single choice for $b$, but $p$ choices for $a$, because $a$ is trivial.  Therefore, there are trivially $p$ choices for $(a,b)$, as $a$ varies over all of $\mathbb{Z}_p$ and $b$ is fixed.
+\\
+\item $x \neq x'$ and $y \neq y'$.
+
+Let $x-x'=q$ and $y-y'=r$.  In this case, we have:
+\begin{align*}
+a(x-x')+b(y-y') =& \\
+a(q)+b(r)=& 0 \bmod p
+\end{align*}
+By the hint in \textbf{(a)}, we know that because $q,r \neq 0$ are fixed, the equation $aq = z\bmod p$ has exactly one solution for every element $z\in \mathbb{Z}_p$.  Similarly, for every $z \in \mathbb{Z}_p$, there exists exactly one $-z \in \mathbb{Z}_p$ such that $-z + z =0$.  Therefore, as $a$ is allowed to vary, over the entire set, $b$ must be chosen uniquely such that $aq+br = 0 \bmod p$ holds.  Because there are $p$ possible choices for $a$ (i.e. every element in $\mathbb{Z}_p$), there are $p$ unique combinations $(a,b)$ such that $(ax+by) \bmod p = (ax'+by') \bmod p$. 
+\end{enumerate}
+\end{proof}
+\item
+If I choose each of $a$ and $b$ uniformly at random from $0 \ldots p-1$,
+what is the probability that $(x,y)$ and $(x',y')$ will hash to the same value?
+
+\end{enumerate}
+\end{enumerate}
+\end{document}

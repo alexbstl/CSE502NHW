@@ -56,11 +56,22 @@
 \begin{document}
 
 % STUDENT: Your text goes here!
-Everything will be of the form
-\begin{align*}
-f\Big(\frac{n}{b^{\log_b(\frac{n}{n_0})+i}}\Big)
-&\\= f\Big(\frac{n}{b^{\log_b(n)- \log_b(n_0)+i}}\Big)
-\\= f\Big(\frac{n}{nb^{- \log_b(n_0)+i}}\Big)
-\\=f\Big(\frac{1}{b^{- \log_b(n_0)+i}}\Big)
-\end{align*}
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item (25\%)
+This problem is an example of \textit{universal hashing},
+a strategy for picking hash functions for a hash table randomly so
+that no input always exhibits bad hashing behavior.
+
+Let $p$ be a prime number.  I want to hash pairs of numbers $(x,y)$,
+where $x$ and $y$ are always between 0 and $p-1$ inclusive.  I
+decide to use a chained hash table with hash function
+\[
+h_{a,b}(x,y) = (ax + by) \bmod p
+\]
+where $a$ and $b$ also lie between 0 and $p-1$.
+\begin{enumerate}
+\item abc
+\end{enumerate}
+\end{enumerate}
 \end{document}
