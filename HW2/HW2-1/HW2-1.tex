@@ -61,7 +61,7 @@
 \item (25\%)  What Asymtotic solution, if any, does the master method give  for each of the following recurrences?
 \\
 \begin{enumerate}
-\item $T(n) = 16T(\frac{n}{2}) + 3n^4\log^2(n) = \Theta(n^4 \log^2(n))$
+\item $T(n) = 16T(\frac{n}{2}) + 3n^4\log^2(n) = \Theta(n^4 \log^2(n))$.
 \begin{proof}
 Let $a = 16$, $b = 2$, $f(n) = 3n^4 \log^2(n)$.  Clearly, 
 \begin{align*}
@@ -72,7 +72,57 @@ f(n) = \Theta(n^4 \log_2^2(n)).
 T(n) = \Theta(n^4 \log_2^3(n)).
 \end{align*}
 \end{proof}
-\item 
+\item $T(n) = T(\frac{n}{3}) + 4 \log(n) = \Theta( \log^2(n))$.
+\begin{proof}
+Let $a = 1$, $b = 3$, and $f(n) = 4 \log(n)$.  Clearly,
+\begin{align*}
+\log_3(1) = 0.
+\end{align*}
+And, we can say that:
+\begin{align*}
+f(n) = \Theta(n^0 \log^1(n))= \Theta( \log(n)).
+\end{align*}
+Therefore,
+\begin{align*}
+T(n) = \Theta(\log^2(n)).
+\end{align*}
+\end{proof}
+\item $T(n) = 4T(\frac{n}{4}) + \frac{n}{\log \log n}$ cannot be judged by the Master Method.
+\begin{proof}
+Let $a = 4$, $b=4$, and $f(n) = \frac{n}{\log \log n}$.  Clearly, $\log_b(a) = \log_4(4) = 1$.  \\
+Also, comparing $g(n)=n$ to $f(n)=\frac{n}{\log \log n}{n}$ with the limit comparison test, 
+\begin{align*}
+\lim_{n \to \infty}\frac{f(n)}{g(n)}=\lim_{n \to \infty} \frac{\frac{n}{\log \log n}}{n} = \lim_{n \to \infty} \frac{1}{\log \log n} = 0.
+\end{align*}
+Therefore, we can say that
+\begin{align*}
+f(n) = \frac{n}{\log \log n}  =\mathcal{O}(n).
+\end{align*}
+However, for any $\epsilon \in \mathbb{R^+}$ (i.e. $\epsilon>0$),
+\begin{align*}
+\lim_{n \to \infty} \frac{f(n)}{g(n)} = \lim_{n \to \infty} \frac{\frac{n}{\log \log n}}{n^{1-\epsilon}}= \lim_{n \to \infty} \frac{n^{\epsilon}}{\log \log n} = \infty.
+\end{align*}
+So, we can say that $f(n) = \Omega(n^{1-\epsilon}) \text{ } \forall \epsilon>0$.  For the same conditions on $\epsilon$, we can say that $f(n) = \mathcal{O}(n^{1+\epsilon})$.
+Therefore we cannot extract any useful information about this recurrence from the Master Method.
+\end{proof}
+\item $T(n) =  9 T\left(\frac{n}{4}\right) + 2n^{\log_4 9}$ cannot be solved via the Master Method.
+\begin{proof}
+Let $a = 9$, $b=4$, and $f(n) = 2n^{\log_4(9)}$.  It is trivial to show that, $f(n) = \Theta\left(n^{\log_4(9)}\right)$.  Therefore, $f(n) = \mathcal{O}(n^{\log_4(9) + \epsilon})$ and $f(n) = \Omega(n^{\log_4(9) - \epsilon})$ $\forall \epsilon>0$.  Therefore, we cannot extract any useful information from the Master Method for this problem. 
+\end{proof}
+\item $T(n) =  11 T\left(\frac{n}{3}\right) + n^2 = \Theta\left(n^{\log_3(11)}\right)$.
+\begin{proof}
+Let $a = 11$, $b=3$, and $f(n) = n^2$.  Quick inspection tells us that $\log_3(11)>2$, so we can say that $f(n) = \mathcal{O}\left(n^{\log_3(11)-\epsilon}\right)$ for a small $\epsilon>0$. We can therefore say that $T(n) = \Theta\left(n^{\log_3(11)}\right)$ by the Master Method.
+\end{proof}
+\item $T(n) = 999 T\left(\frac{n}{10}\right) + 2n^3 = \Theta(n^3)$.
+\begin{proof}
+Let $a = 999$, $b = 10$, and $f(n) = 2n^3$.  Quick inspection tells us that 
+$\log_10(999)<3$, so $f(n) = 2n^3 = \Omega(n^{\log_{10}(999)+ \epsilon})$ for a sufficent $\epsilon>0$.  Therefore, we can say that $T(n) = \Theta(n^3)$ by the Master Method.
+\end{proof}
+\item $T(n) =  7 T\left(\frac{n}{2}\right) + n^3 \log n \log \log n = \Theta(n^3 \log n \log \log n)$.
+\begin{proof}
+Let $a= 7$, $b=2$, and $f(n) = n^3 \log n \log \log n$.  Quick inspection tells us that $\log_2(7) < 3$.  We can therefore say that $f(n)= \Omega(n^{\log_2(7)+ \epsilon})$ for a sufficient $\epsilon>0$.  Therefore, by the Master Method, $T(n) = \Theta(n^3 \log n \log \log n)$.
+\end{proof}
+
 \end{enumerate}
 \end{enumerate}
 \end{document}
