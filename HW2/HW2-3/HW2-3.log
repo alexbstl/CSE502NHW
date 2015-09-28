@@ -2,8 +2,8 @@ This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2013
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**homework-template.tex
-(./homework-template.tex
+**HW2-3.tex
+(./HW2-3.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
@@ -294,8 +294,9 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip58
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (./homework-template.aux)
-\openout1 = `homework-template.aux'.
+)
+No file HW2-3.aux.
+\openout1 = `HW2-3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
 LaTeX Font Info:    ... okay on input line 56.
@@ -311,7 +312,6 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
 LaTeX Font Info:    ... okay on input line 56.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
 LaTeX Font Info:    ... okay on input line 56.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
@@ -359,8 +359,11 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 56.
 LaTeX Info: Redefining \pageref on input line 56.
 LaTeX Info: Redefining \nameref on input line 56.
-LaTeX Font Info:    Try loading font information for U+msa on input line 62.
 
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 62.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -391,18 +394,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 244--246
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 281.
  [3]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 281.
- (./homework-template.aux)
+ (./HW2-3.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 281.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 281.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 281.
  ) 
 Here is how much of TeX's memory you used:
- 6505 strings out of 493316
- 93194 string characters out of 6137930
- 192333 words of memory out of 5000000
+ 6503 strings out of 493316
+ 93066 string characters out of 6137930
+ 192218 words of memory out of 5000000
  9912 multiletter control sequences out of 15000+600000
  9110 words of font info for 35 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,10n,43p,463b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,10n,43p,451b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on homework-template.dvi (3 pages, 13388 bytes).
+Output written on HW2-3.dvi (3 pages, 13388 bytes).
