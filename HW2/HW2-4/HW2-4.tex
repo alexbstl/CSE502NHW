@@ -81,6 +81,9 @@ $(x_i,y_i)$ will hash to the same slot of my table.
 \textit{(\textbf{Hint}: for any $c$, $1 \leq c < p$, and every $i$, $0
 \leq i < p$, there exists exactly one $j$, $0 \leq j < p$ for which
 $cj \equiv i \pmod p$.)}
+\begin{proof}
+First, note that for any given $p,z \in \{0,1,2,\ldots,p-1\}= \mathbb{Z}_p$, we have a unique choice of $q \in \mathbb{Z}_p$ such that $p+q=z$.  Further, we know that for any given $p$, the $q$ described above always exists.  That is, to any number in $\mathbb{Z}_p$, we can always add another, unique number to construct any other number in $\mathbb{Z}_p$.  Therefore, because we want to construct a series of pairs of values $(x_1,y_1),(x_2,y_2)\ldots(x_p,y_p)$ such that they all hash to the same value, we must first choose some value in $\{0,1,2,\ldots,p-1\} = \mathbb{Z}_p$ that we want every value to hash to.  Given that sum value, say $z$, we can allow $x_i$ to vary over each value in $\mathbb{Z}_p$, in total, $p$ values.  Given that we know both $a,b$, we know the value for each $ax_i$, so we wish to construct $by_i$ such that $by_i= z - ax_i \bmod p$.  Given that this $by_i$ is unique, and $b$ is already fixed, we can simply choose the unique $y_i$ as described in the hint such that $by_i \bmod p = (z - ax_i) \bmod p$.  Therefore, we have now constructed $p$ different pairs $(x_i,y_i)$ such that $(ax_i+by_i)\bmod p = z$, $i = 1,2,\ldots p$.
+\end{proof}
 
 
 
@@ -134,8 +137,21 @@ By the hint in \textbf{(a)}, we know that because $q,r \neq 0$ are fixed, the eq
 \end{proof}
 \item
 If I choose each of $a$ and $b$ uniformly at random from $0 \ldots p-1$,
-what is the probability that $(x,y)$ and $(x',y')$ will hash to the same value?
+what is the probability that $(x,y)$ and $(x',y')$ will hash to the same value?  
+\\
+We have a $\frac{1}{p}$ chance that $(x,y)$ and $(x',y')$ will hash to the same value.
+\begin{proof}
+Notice that for $\{0,1,2,\ldots,p-1\}$ there are $p^2$ ordered pairs $(a,b)$ that can be formed.  From \textbf{(b)}, we know that there are $p$ unique pairs $(a,b)$ such that $(ax+by)\bmod p = (ax'+by') \bmod p$.  Therefore, the probability that we choose $a,b$ randomly from $\{0,1,2,\ldots,p-1\}$ such that $(x,y)$ and $(x',y')$ hash to the same values is given by:
+\begin{align*}
+P[(ax+by)\bmod p = (ax'+by')\bmod p] = \frac{p}{p^2} = \frac{1}{p}.
+\end{align*}
+\end{proof}
+\item
+Given an \emph{arbitrary} set of $n$ distinct inputs $(x_i, y_i)$,
+what is the expected number (over my random choices of $a$ and $b$)
+of pairs $i, j$, $i < j$, for which $h_{a,b}(x_i, y_i) = h_{a,b}(x_j,y_j)$?
 
+\textit{(\textbf{Hint}: use linearity of expectation!)}
 \end{enumerate}
 \end{enumerate}
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2013.5.30)  28 SEP 2015 15:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2013.5.30)  28 SEP 2015 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -381,7 +381,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 67.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 121--125
+Underfull \hbox (badness 10000) in paragraph at lines 124--128
 
  []
 
@@ -394,13 +394,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
  [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
  (./HW2-4.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 141.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 141.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 157.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 157.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 157.
  ) 
 Here is how much of TeX's memory you used:
  6562 strings out of 493316
@@ -409,6 +409,6 @@ Here is how much of TeX's memory you used:
  9965 multiletter control sequences out of 15000+600000
  9301 words of font info for 35 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,10n,43p,615b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,10n,43p,1192b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on HW2-4.dvi (2 pages, 9708 bytes).
+Output written on HW2-4.dvi (2 pages, 13452 bytes).
