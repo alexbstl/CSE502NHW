@@ -137,7 +137,7 @@ always maintains its load factor at or below some bound $\alpha < 1$.
 Assume that you can hash a record and place it into the table in
 constant time.
 \begin{proof}
-Note that $\alpha = \frac{m}{n}$, with $m<n$.
+Note that $\alpha = \frac{m}{n}$, with $m<n$, where $m$ is an the maximum number of elements in the table.  Note that, because the table doubles in size, with every doubling, $\alpha$ remains constant, and $ m \to 2m$ and $n \to 2n$.  Let $k$ be the number of elements in the table.  As we insert more elements into the array, we need to change the hashing function to take into account the new size of the table.  In doing so, we must also rehash the values of all current elements of the table, which may change some of the slot values for some objects in the table.  However, this is necessary to keep all operations consistent over the new size of the table. 
 \end{proof}
 \end{enumerate}
 \end{enumerate}
