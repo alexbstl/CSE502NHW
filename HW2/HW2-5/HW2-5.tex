@@ -1,0 +1,144 @@
+%
+% CSE Electronic Homework Template
+% Last modified 4/20/2015 by Jeremy Buhler
+
+\documentclass[11pt]{article}
+\usepackage[left=0.7in,right=0.7in,top=0.7in,bottom=0.7in]{geometry}
+\usepackage{fancyhdr} % for header
+\usepackage{graphicx} % for figures
+\usepackage{amsmath}  % for extended math markup
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[bookmarks=false]{hyperref} % for URL embedding
+\usepackage[noend]{algpseudocode} % for pseudocode
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% STUDENT: modify the following fields to reflect your
+% name/WUSTL Key, the current homework, and the current problem number
+
+% Example: 
+%\newcommand{\StudentName}{Jeremy Buhler}
+%\newcommand{\WUSTLKey}{jbuhler}
+
+\newcommand{\StudentName}{Alex Bernstein}
+\newcommand{\WUSTLKey}{a.bernstein}
+\newcommand{\HomeworkNumber}{1}
+\newcommand{\ProblemNumber}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You can pretty much leave the stuff up to the next line of %%'s alone.
+
+% create header and footer for every page
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{\StudentName{} (\WUSTLKey)}}
+\chead{\textbf{Homework \HomeworkNumber}}
+\rhead{\textbf{Problem \ProblemNumber}}
+\cfoot{\thepage}
+
+% preferred pseudocode style
+\algrenewcommand{\algorithmicprocedure}{}
+\algrenewcommand{\algorithmicthen}{}
+
+% ``do { ... } while (cond)''
+\algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}%
+
+% ``for (x in y ... z)''
+\newcommand{\ForRange}[3]{\For{#1 \textbf{in} #2 \ \ldots \ #3}}
+
+% these are common math formatting commands that aren't defined by default
+\newcommand{\union}{\cup}
+\newcommand{\isect}{\cap}
+\newcommand{\ceil}[1]{\ensuremath \left\lceil #1 \right\rceil}
+\newcommand{\floor}[1]{\ensuremath \left\lfloor #1 \right\rfloor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% STUDENT: Your text goes here!
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item (25\%)
+In this problem we will explore an efficient strategy for maintaining
+\textit{extensible} array-based data structures.  The arrays used by
+these structures have no \textit{a priori} upper limit on their size;
+rather, they grow as the number of elements in them increases.  Java's
+\texttt{ArrayList} type implements an extensible array.
+An extensible array $A$ starts out empty with some fixed number of
+slots and grows as elements are inserted into it according to
+the following \textbf{doubling rule}:
+\begin{quote}
+\textit{If we are about to insert an element into $A$ and find that it is
+full, double the number of slots in $A$ before inserting the new
+element.}
+\end{quote}
+Doubling the array size typically cannot be done in-place; it requires
+that we allocate a new, larger array, then copy all the elements of
+the old array into the new array.
+
+Suppose now that we create an empty extensible array with one slot,
+then insert $2^k$ elements into it.  Justify your answers to each of
+the following questions.
+
+\begin{enumerate}
+
+\item
+What is the final number of slots in the array after all $2^k$
+elements have been inserted? (\textit{Hint}: work out the answer for
+a few small values of $k$ to see the pattern, then check your
+guess with an induction proof.)
+\\ \\
+There will be $2^k$ slots in the array, all filled.
+\begin{proof}
+By induction, we will start with the case $k=1$.  We have to insert $2^1=$ elements.  Because there are initially $2^0=1$ slots in the array, we need to double its size to $2^1=2$.  There are now $2^1=2$ slots in the array.  Now, assume this is true for the first $k$ elements, that is that after $2^k$ elements have been inserted, there are $2^k$ slots in the array.  We now wish to show that the same holds true for $k+1$.  Wishing to insert the last $2^{k+1}-2^k$ elements in the array, which is now full, we must now double the size of the array.  Therefore the array that previously had $2^k$ slots has $2 \cdot  2^k= 2^{k+1}$ slots.  Because there are exactly $2^k$ elements, this is the exact size of the array we need.  Further, because we have exactly $2^k$ elements, each slot in the array will be filled.
+\end{proof}
+
+
+\item
+How many times did we have to double the array size to insert all $2^k$
+elements?
+\\ \\
+We needed to double the array $k$ times.
+\begin{proof}
+It is clear that we needed to double the array exactly once to insert $2^1=2$ elements into the array.  Therefore, assume we double the array $k$ times to insert $2^k$ elements.  Clearly, if we wish to insert $2^{k+1}$ elements, we need to double the array again, so, in total, we must double the array $k+1$ times to insert $2^{k+1}$ elements.
+\end{proof}
+\item
+How many times total did we have to copy an element of the array over all 
+these doubling operations?  (\textit{Hint}: figure out the
+number of elements copied during each doubling operation, then sum over
+all doublings.)
+\\ \\
+We will always copy $2^k-1$ elements to insert $2^k$ elements into this array.
+\begin{proof}
+Note that for each array doubling, we need to copy the entirety of the existing array into the new array.  Let $f(k)$ be the number of total elements copied in all arrays prior to the $k^{th}$ doubling.  Clearly, $f(0) = 0=2^0-1$, $f(1) = 1=2^1-1$, and $f(2)= f(1) + 2=3= 2^{3}-1$.  We wish to show that the total number of elements copied to insert $2^k$ elements into an array is is given by $2^k-1$.  As we already have our base case, assume this is true for $2^k$ elements: that is, we have already copied $f(k)=2^k-1$ elements.  As we must now double the size of our array, we need to copy another $2^k$ elements.  Therefore, the total number of copies is given by $f(k+1)=f(k)+2^k = 2^k-1 + 2^k = 2\cdot(2^k) -1 = 2^{k+1}-1$, thus proving our inductive claim.
+\end{proof}
+
+\item
+What is the \emph{average} number of elements copied per
+insertion over all $2^k$ insertions?  In other words,
+what is the ratio of the number of copies to the number of new
+insertions?  Assuming each copy takes constant time, does 
+extensibility affect the average asymptotic complexity of the 
+\texttt{insert} operation?
+\\ \\
+On average, we copy $1-\frac{1}{2^k}$ elements for each element we insert.  This does not affect the asymptotic complexity of our \texttt{insert} operation.
+\begin{proof}
+In total, we have inserted $2^k$ elements, and copied $2^k-1$ elements to do so.  The average number of elements copied per insertion is given by:
+\begin{align*}
+\text{Average Copies Per Insertion} = \frac{\text{elements copied}}{\text{elements inserted}}=\frac{2^k-1}{2^k}= 1-\frac{1}{2^k}
+\end{align*}
+To show that this doesn't affect the asymptotic complexity of our insert operation, note that $\lim_{k \to \infty} 1-\frac{1}{2^k} = 1$.  This means that asymptotically, we make $1$ copy for each new item we insert into the array.  This means that inserting $n=2^k$ items into an array will take $n \cdot \Theta(1)$ to insert and $n \cdot \Theta(1)$ to copy elements for the extensible array.  However, the aggregate operation to copy for insert is still $\Theta(n)$ for $n= 2^k$ inserting elements, because both insert and copy are constant time.   
+\end{proof}
+\item
+How can you use the idea of extensible arrays to implement an
+\emph{extensible hash table}?  Such a table grows dynamically but
+always maintains its load factor at or below some bound $\alpha < 1$.
+Assume that you can hash a record and place it into the table in
+constant time.
+\begin{proof}
+Note that $\alpha = \frac{m}{n}$, with $m<n$.
+\end{proof}
+\end{enumerate}
+\end{enumerate}
+\end{document}
