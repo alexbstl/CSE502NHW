@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2013.5.30)  29 SEP 2015 03:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2013.5.30)  30 SEP 2015 11:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -306,8 +306,7 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip61
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-)
-No file HW2-2.aux.
+) (./HW2-2.aux)
 \openout1 = `HW2-2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
@@ -324,6 +323,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
@@ -371,11 +371,8 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 57.
 LaTeX Info: Redefining \pageref on input line 57.
 LaTeX Info: Redefining \nameref on input line 57.
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 LaTeX Font Info:    Try loading font information for U+msa on input line 64.
+
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -420,12 +417,12 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 172.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 172.
  ) 
 Here is how much of TeX's memory you used:
- 6558 strings out of 493316
- 93758 string characters out of 6137930
- 194463 words of memory out of 5000000
+ 6560 strings out of 493316
+ 93778 string characters out of 6137930
+ 194578 words of memory out of 5000000
  9964 multiletter control sequences out of 15000+600000
  8942 words of font info for 34 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  29i,12n,43p,282b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on HW2-2.dvi (2 pages, 13780 bytes).
+Output written on HW2-2.dvi (2 pages, 13764 bytes).

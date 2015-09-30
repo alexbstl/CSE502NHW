@@ -156,9 +156,9 @@ for some $c'$ not dependent on $n$.  First, we need to adjust the bounds of our 
 \begin{align*}
 \sum_{k = \log_b n - \log_b n_0 }^{\log_b n - 1} a^k f(\frac{n}{b^k}) &= 
 \sum_{i=0}^{\log_b n_0 -1} a^{\log_b n - \log_b n_0 +i }f\bigl(\frac{n}{b^{\log_b n -\log_b n_0 +i}}\bigr)\\
-&= \sum_{i=0}^{\log_b n_0 -1}a^{\log_b(n)}a^{-\log_b(n_0)}a^i f\bigl(\frac{n}{b^{\log_b n}b^{-\log_b n_0} b^i}\bigr) \\
-&= a^{\log_b(n)}a^{-\log_b(n_0)} \sum_{i=0}^{-\log_b n_0 -1}a^i f \bigl(\frac{n}{n n_0^{-1} b^i}\bigr) \\
-&= a^{\log_b(n)}a^{-\log_b(n_0)} \sum_{i=0}^{-\log_b n_0 -1}a^i f \bigl(\frac{n_0}{b^i}\bigr) \\
+&= \sum_{i=0}^{\log_b n_0 -1}a^{\log_b(n)}a^{\log_b(n_0)}a^i f\bigl(\frac{n}{b^{\log_b n}b^{-\log_b n_0} b^i}\bigr) \\
+&= a^{\log_b(n)}a^{-\log_b(n_0)} \sum_{i=0}^{\log_b n_0 -1}a^i f \bigl(\frac{n}{n n_0^{-1} b^i}\bigr) \\
+&= a^{\log_b(n)}a^{-\log_b(n_0)} \sum_{i=0}^{\log_b n_0 -1}a^i f \bigl(\frac{n_0}{b^i}\bigr) \\
 &= c'a^{\log_b(n)}
 \end{align*}
 where
