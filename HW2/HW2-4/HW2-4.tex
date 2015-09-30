@@ -162,11 +162,13 @@ We know from \textbf{(c)} that the probability of two pairs colliding is $\frac{
 0 \text{  otherwise} 
 \end{cases}
 \end{align*}
-Therefore, we can say that the expected value of $\mathbb{E}(\chi_{si}) = \frac{1}{p}$.  Therefore, for n points, the expected number of points that that hash to a slot $s$ (i.e. $h_{a,b}(x_i,y_i)\bmod p= s$) is given by:
+
+The chance that two points out of $n$ will hash to the same slot is given by 
+$n \choose 2$ with a probability of $\frac{1}{p}$ per slot.  
+Therefore, the chance that 2 pairs will collide in any given slot is given by 
 \begin{align*}
-\mathbb{E}\Bigl(\sum_{i=1}^n \chi_{si}\Bigr) = \sum_{i=1}^n \mathbb{E}(\chi_{si})= \sum_{i=1}^n \frac{1}{p} = \frac{n}{p}
+\frac{\binom{n}{2}}{p}
 \end{align*}
-Note that this is another way of thinking about the probability that two pairs of points $(x_i,y_i)$ and $(x_j,y_j)$ will collide, because $\frac{n}{p}$ is the expected value of pairs hashed to any slot in the table.
 \end{proof}
 \end{enumerate}
 \end{enumerate}
